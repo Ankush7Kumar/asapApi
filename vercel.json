@@ -1,9 +1,4 @@
 {
-    "version": 2,
-    "functions": {
-      "api/apiEndpoints.js": {
-        "maxDuration": 30
-      }
-    }
-  }
+    "version": 2
+}
   
