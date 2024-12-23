@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const processInput = require("./index"); // Adjust path based on file location
+const processInput = require("../index"); // Adjust path based on file location
 const cors = require("cors");
 
 const app = express();
