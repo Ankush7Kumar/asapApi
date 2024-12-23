@@ -1,1 +1,8 @@
-src/apiEndpoints.js  -> This is your Express logic
+{
+    "version": 2,
+    "functions": {
+      "src/**.js": {
+        "maxDuration": 30
+      }
+    }
+  }
