@@ -1,29 +1,20 @@
-// Import required modules
 const express = require("express");
 const bodyParser = require("body-parser");
-const processInput = require("./index"); // Ensure this path matches the location of the processInput method
-require("dotenv").config({ path: "./.env" });
-
-// Initialize Express app
-const app = express();
-const PORT = process.env.PORT || 3000;
-
+const processInput = require("./index"); // Adjust path based on file location
 const cors = require("cors");
 
-// Allow all origins
-app.use(cors());
+const app = express();
 
-// Middleware
+app.use(cors());
 app.use(bodyParser.json());
 
-// Route to test processInput
 app.post("/api/test", async (req, res) => {
   const { input } = req.body;
 
   if (!input) {
     return res.status(400).json({ error: "Input field is required." });
   }
- 
+
   try {
     console.log(`Processing input: ${input}`);
     const result = await processInput(input);
@@ -34,8 +25,4 @@ app.post("/api/test", async (req, res) => {
   }
 });
 
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Express server running on http://localhost:${PORT}`);
-});
-
+module.exports = app;
